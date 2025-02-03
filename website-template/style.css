@@ -7,34 +7,49 @@ body {
 header {
     background: #222;
     color: white;
-    padding: 15px 0;
+    padding: 15px;
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1000;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
 }
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
 }
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 nav ul li a {
     color: white;
     text-decoration: none;
 }
+#menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
 #hero {
-    background: #f4f4f4;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
     padding: 100px 20px;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 .cta-button {
-    background: #007BFF;
+    background: #ff4d4d;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+    display: inline-block;
 }
 .service {
     background: #eee;
@@ -42,6 +57,15 @@ nav ul li a {
     margin: 10px;
     display: inline-block;
     width: 40%;
+}
+.testimonial-container {
+    position: relative;
+}
+.testimonial {
+    display: none;
+}
+.testimonial.fade {
+    display: block;
 }
 form input, form textarea {
     width: 80%;
@@ -53,4 +77,34 @@ footer {
     color: white;
     padding: 10px;
     margin-top: 20px;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+    }
+    nav ul li {
+        padding: 10px;
+        text-align: center;
+    }
+    #menu-icon {
+        display: block;
+    }
 }

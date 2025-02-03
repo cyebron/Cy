@@ -3,58 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Name</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Modern Business</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+
 </head>
-<body>
-    <header>
-        <nav>
-            <h1>Business Name</h1>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Navigation -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-xl font-bold text-blue-600">ModernBiz</h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#hero" class="hover:text-blue-500">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-500">About</a></li>
+                <li><a href="#services" class="hover:text-blue-500">Services</a></li>
+                <li><a href="#testimonials" class="hover:text-blue-500">Testimonials</a></li>
+                <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+                <li><!-- Dark mode toggle button -->
+                    <button id="dark-mode-toggle" class="fixed bottom-5 right-5 p-3 bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-700 transition">
+                        🌙
+                    </button>
+                </li>
             </ul>
+            <button id="menu-toggle" class="md:hidden text-2xl">☰</button>
         </nav>
+        <ul id="mobile-menu" class="hidden bg-white text-center shadow-md md:hidden">
+            <li><a href="#hero" class="block py-2">Home</a></li>
+            <li><a href="#about" class="block py-2">About</a></li>
+            <li><a href="#services" class="block py-2">Services</a></li>
+            <li><a href="#testimonials" class="block py-2">Testimonials</a></li>
+            <li><a href="#contact" class="block py-2">Contact</a></li>
+        </ul>
     </header>
 
-    <section id="hero">
-        <h2>We Help You Grow</h2>
-        <p>Your business solution for success</p>
-        <a href="#contact" class="cta-button">Get Started</a>
+    <!-- Hero Section -->
+    <section id="hero" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 to-indigo-500 text-white">
+        <h2 class="text-4xl font-bold mb-4 animate-fadeIn">Boost Your Business Online</h2>
+        <p class="text-lg mb-6 animate-fadeIn">We create high-quality, responsive websites.</p>
+        <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-lg shadow-md hover:bg-blue-100 transition">Get Started</a>
+        <h2 class="text-4xl font-bold mb-4 animate-fadeIn">Boost Your Business Online</h2>
+        <p class="text-lg mb-6 animate-slideInUp">We create high-quality, responsive websites.</p>
+
     </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We provide top-notch services to help your business thrive.</p>
+    <!-- Pricing Cards -->
+    <div class="bg-white p-6 shadow-md rounded-lg transform hover:scale-105 transition">
+
+    <!-- About Section -->
+    <section id="about" class="py-20 text-center container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-6">About Us</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto">We specialize in modern, user-friendly web design and development.</p>
     </section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service">
-            <h3>Web Development</h3>
-            <p>We create stunning websites tailored to your business.</p>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-200 text-center">
+        <h2 class="text-3xl font-bold mb-6">Our Services</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+            <div class="bg-white p-6 shadow-md rounded-lg w-80 transform hover:scale-105 transition">
+                <h3 class="text-xl font-semibold">Web Design</h3>
+                <p class="text-gray-600">Beautiful, functional, and fast websites.</p>
+            </div>
+            <div class="bg-white p-6 shadow-md rounded-lg w-80 transform hover:scale-105 transition">
+                <h3 class="text-xl font-semibold">SEO Optimization</h3>
+                <p class="text-gray-600">Rank higher on Google with our SEO strategies.</p>
+            </div>
         </div>
-        <div class="service">
-            <h3>SEO Optimization</h3>
-            <p>We help you rank higher on Google.</p>
+    </section>
+
+    <!-- Add pricing table -->
+    <section id="pricing" class="py-20 text-center bg-gray-200">
+        <h2 class="text-3xl font-bold mb-6">Our Pricing</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+            <div class="bg-white p-6 shadow-md rounded-lg w-80 transform hover:scale-105 transition">
+                <h3 class="text-xl font-semibold">Basic</h3>
+                <p class="text-gray-600">Perfect for small businesses</p>
+                <p class="text-2xl font-bold mt-3">$9.99/month</p>
+                <button class="mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Choose Plan</button>
+            </div>
+            <div class="bg-white p-6 shadow-md rounded-lg w-80 transform hover:scale-105 transition">
+                <h3 class="text-xl font-semibold">Pro</h3>
+                <p class="text-gray-600">For growing businesses</p>
+                <p class="text-2xl font-bold mt-3">$29.99/month</p>
+                <button class="mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Choose Plan</button>
+            </div>
+            <div class="bg-white p-6 shadow-md rounded-lg w-80 transform hover:scale-105 transition">
+                <h3 class="text-xl font-semibold">Enterprise</h3>
+                <p class="text-gray-600">For large-scale operations</p>
+                <p class="text-2xl font-bold mt-3">$99.99/month</p>
+                <button class="mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Choose Plan</button>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 text-center container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-6">What Clients Say</h2>
+        <div class="relative max-w-xl mx-auto">
+            <div class="testimonial text-lg italic text-gray-800">"Amazing service! My business is growing thanks to this website." - John Doe</div>
+            <div class="testimonial text-lg italic text-gray-800 hidden">"Professional and creative team. Highly recommend!" - Sarah Smith</div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-200 text-center">
+        <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+        <form id="contactForm" class="max-w-lg mx-auto bg-white p-6 shadow-md rounded-lg">
+            <input type="text" id="name" class="w-full p-3 mb-4 border rounded" placeholder="Your Name" required>
+            <input type="email" id="email" class="w-full p-3 mb-4 border rounded" placeholder="Your Email" required>
+            <textarea id="message" class="w-full p-3 mb-4 border rounded" placeholder="Your Message" required></textarea>
+            <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">Send Message</button>
         </form>
     </section>
 
-    <footer>
-        <p>© 2025 Business Name. All rights reserved.</p>
+    <footer class="py-4 bg-gray-900 text-white text-center">
+        <p>© 2025 ModernBiz. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
