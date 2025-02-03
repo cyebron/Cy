@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header {
+    background: #222;
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+#hero {
+    background: #f4f4f4;
+    padding: 100px 20px;
+    margin-top: 50px;
+}
+.cta-button {
+    background: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.service {
+    background: #eee;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+    width: 40%;
+}
+form input, form textarea {
+    width: 80%;
+    margin: 10px 0;
+    padding: 10px;
+}
+footer {
+    background: #222;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
