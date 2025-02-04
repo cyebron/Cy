@@ -38,13 +38,12 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("Thank you! We will contact you soon.");
     });
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const darkModeToggle = document.getElementById("dark-mode-toggle");
-        
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    if (darkModeToggle) {
         darkModeToggle.addEventListener("click", function() {
             document.documentElement.classList.toggle("dark");
         });
-    });
+    }
 
         // Firebase Configuration
     const firebaseConfig = {

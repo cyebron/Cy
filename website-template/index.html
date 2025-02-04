@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Business</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer  src="https://cdn.tailwindcss.com"></script>
     <script defer src="script.js"></script>
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
-
 </head>
 <body class="bg-gray-100 text-gray-900">
 
@@ -23,14 +19,13 @@
                 <li><a href="#services" class="hover:text-blue-500">Services</a></li>
                 <li><a href="#testimonials" class="hover:text-blue-500">Testimonials</a></li>
                 <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
-                <li><!-- Dark mode toggle button -->
-                    <button id="dark-mode-toggle" class="fixed bottom-5 right-5 p-3 bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-700 transition">
-                        🌙
-                    </button>
-                </li>
             </ul>
             <button id="menu-toggle" class="md:hidden text-2xl">☰</button>
         </nav>
+        <!-- Dark mode toggle button -->
+        <button id="dark-mode-toggle" class="fixed bottom-5 right-5 p-3 bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-700 transition">
+            🌙
+        </button>
         <ul id="mobile-menu" class="hidden bg-white text-center shadow-md md:hidden">
             <li><a href="#hero" class="block py-2">Home</a></li>
             <li><a href="#about" class="block py-2">About</a></li>
@@ -45,13 +40,9 @@
         <h2 class="text-4xl font-bold mb-4 animate-fadeIn">Boost Your Business Online</h2>
         <p class="text-lg mb-6 animate-fadeIn">We create high-quality, responsive websites.</p>
         <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-lg shadow-md hover:bg-blue-100 transition">Get Started</a>
-        <h2 class="text-4xl font-bold mb-4 animate-fadeIn">Boost Your Business Online</h2>
-        <p class="text-lg mb-6 animate-slideInUp">We create high-quality, responsive websites.</p>
+        
 
     </section>
-
-    <!-- Pricing Cards -->
-    <div class="bg-white p-6 shadow-md rounded-lg transform hover:scale-105 transition">
 
     <!-- About Section -->
     <section id="about" class="py-20 text-center container mx-auto px-6">
@@ -124,5 +115,8 @@
         <p>© 2025 ModernBiz. All rights reserved.</p>
     </footer>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
 </body>
 </html>
