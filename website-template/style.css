@@ -1,110 +1,383 @@
-body {
-    font-family: Arial, sans-serif;
+/* Resetting default browser styles */
+* {
     margin: 0;
     padding: 0;
-    text-align: center;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F9F9F9; /* Off-white background for a clean, breathable design */
+    color: #27445D; /* Dark slate gray for text */
+}
+
+/* Header */
 header {
-    background: #222;
-    color: white;
-    padding: 15px;
+    background-color: #497D74; /* Soft teal for a modern touch */
+    color: #EFE9D5; /* Light, warm off-white for contrast */
+    padding: 10px;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
+    box-sizing: border-box;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: auto;
+    padding: 3px;
 }
-nav ul {
+
+#logo-menu {
+    font-weight: bold;
+    color: #EFE9D5;
+}
+
+.nav-links {
     list-style: none;
-    padding: 0;
     display: flex;
+    gap: 30px;
 }
-nav ul li {
-    margin: 0 15px;
-}
-nav ul li a {
-    color: white;
+
+.nav-links li a {
+    color: #EFE9D5;
     text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
 }
-#menu-icon {
+
+.nav-links li a:hover {
+    color: #BB9D6B; /* Warm gold for hover effect */
+}
+
+#menu-toggle {
     display: none;
     font-size: 30px;
-    cursor: pointer;
-}
-#hero {
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    background: none;
+    border: none;
     color: white;
-    padding: 100px 20px;
-    margin-top: 60px;
-}
-.cta-button {
-    background: #ff4d4d;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-}
-.service {
-    background: #eee;
-    padding: 20px;
-    margin: 10px;
-    display: inline-block;
-    width: 40%;
-}
-.testimonial-container {
-    position: relative;
-}
-.testimonial {
-    display: none;
-}
-.testimonial.fade {
-    display: block;
-}
-form input, form textarea {
-    width: 80%;
-    margin: 10px 0;
-    padding: 10px;
-}
-footer {
-    background: #222;
-    color: white;
-    padding: 10px;
-    margin-top: 20px;
 }
 
-/* Animations */
-.fade-in {
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EFE9D5;
+    text-align: center;
+    /* Combine gradient and image */
+    background: linear-gradient(to right, rgba(73, 125, 116, 0.7), rgba(39, 68, 93, 0.7)), 
+                url('images/hero-background.jpg'); /* Add your image URL */
+    
+    background-size: cover;  /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+}
+
+.hero-content {
+    max-width: 80%;
+}
+.hero-content .title{
+    font-size: 48px;
+}
+.hero-content p{
+    font-size: 18px;
+}
+
+
+.hero-buttons {
+    margin-top: 5%;
+}
+
+.cta-button, .cta-link {
+    background-color: #BB9D6B; /* Warm gold */
+    color: #EFE9D5;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cta-button:hover, .cta-link:hover {
+    background-color: #0a2842; /* Deep teal for hover */
+}
+
+/* About Section */
+#about {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #FFFFFF; /* Clean white background */
+}
+
+.about-content{
+    max-width: 70%;
+}
+
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 20px;
+    color: #555555; /* Light gray for less prominent text */
+}
+
+/* Services Section */
+#services {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #E0E0E0; /* Soft gray for contrast */
+}
+
+#services h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.service-card {
+    display: inline-block;
+    width: 30%;
+    background-color: #FFFFFF;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card i {
+    font-size: 28px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Subtle hover effect */
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 18px;
+    color: #777;
+}
+
+/* Pricing Section */
+#pricing {
+    padding: 60px 20px;
+    background-color: #FFFFFF; /* White background */
+    text-align: center;
+}
+
+#pricing h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.pricing-card {
+    display: inline-block;
+    width: 300px;
+    background-color: #FFFFFF;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.pricing-card .price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #497D74; /* Soft teal for pricing emphasis */
+    margin-top: 15px;
+}
+
+button {
+    background-color: #497D74; /* Teal button */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #BB9D6B; /* Gold for hover effect */
+}
+
+/* #testimonials {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #F5F5F5; 
+}
+
+.testimonial {
+    font-size: 20px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 30px;
+} */
+#testimonials {
+    text-align: center;
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    height: 80px; /* Adjust based on content */
+    overflow: hidden;
+}
+
+/* Default hidden state */
+.testimonial-1,
+.testimonial-2 {
+    position: absolute;
+    width: 100%;
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease-in-out;
+    transition: opacity 2s ease-in-out; /* Smooth transition */
 }
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
+
+/* Animation to alternate testimonials smoothly */
+@keyframes fade-in-out {
+    0%, 40% { opacity: 1; }   /* Show first testimonial */
+    50%, 100% { opacity: 0; } /* Fade out smoothly */
 }
+
+@keyframes fade-in-out-reverse {
+    0%, 40% { opacity: 0; }  /* Keep second testimonial hidden */
+    50%, 100% { opacity: 1; } /* Fade in smoothly */
+}
+
+/* Apply animation */
+.testimonial-1 {
+    animation: fade-in-out 6s infinite ease-in-out;
+}
+
+.testimonial-2 {
+    animation: fade-in-out-reverse 6s infinite ease-in-out;
+}
+
+
+/* Contact Section */
+#contact {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+#contact h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+form {
+    display: inline-block;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 90%;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 150px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #497D74; /* Teal button */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #BB9D6B; /* Gold for hover */
+}
+
+/* Footer */
+footer {
+    background-color: #222222;
+    color: #EFE9D5;
+    text-align: center;
+    padding: 20px;
+}
+
+/* css for small screen (responsive) */
+nav .fa-solid{
+    display: none;
+  }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background: #333;
-        position: absolute;
-        width: 100%;
-        top: 60px;
+@media only screen and (max-width: 600px) {
+    #mobile-menu.hidden {
+        display: block; /* Show the mobile menu when the toggle is clicked */
     }
-    nav ul li {
-        padding: 10px;
-        text-align: center;
-    }
-    #menu-icon {
+
+      nav .fa-solid{
         display: block;
+        font-size: 25px;
+      }
+      nav ul{
+        background: rgb(0,0,0);
+        background: linear-gradient(to right, #497D74, #27445D);
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+      }
+      nav ul li{
+        display: block;
+        margin: 25px;
+      }
+      nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+      }
+
+      .pricing-card {
+        display: inline-block;
+        max-width: 80%;
+        background-color: #FFFFFF;
+        justify-content: center;
+        padding: 30px;
+        margin: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .pricing-card .price {
+        font-size: 22px;
+        
     }
 }

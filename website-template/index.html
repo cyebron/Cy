@@ -4,119 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Business</title>
-    <script defer  src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1a0baad43d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
+
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body>
 
     <!-- Navigation -->
-    <header class="bg-white shadow-md fixed w-full top-0 z-50">
-        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-            <h1 class="text-xl font-bold text-blue-600">ModernBiz</h1>
-            <ul class="hidden md:flex space-x-6">
-                <li><a href="#hero" class="hover:text-blue-500">Home</a></li>
-                <li><a href="#about" class="hover:text-blue-500">About</a></li>
-                <li><a href="#services" class="hover:text-blue-500">Services</a></li>
-                <li><a href="#testimonials" class="hover:text-blue-500">Testimonials</a></li>
-                <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+    <header>
+        <nav>
+            <h1 id="logo-menu">WebBiz</h1>
+            <ul id="desktop-menu" class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
             </ul>
-            <button id="menu-toggle" class="md:hidden text-2xl">☰</button>
+            <i class="fa-solid fa-bars" onclick="openMenu()"></i>
         </nav>
-        <!-- Dark mode toggle button -->
-        <button id="dark-mode-toggle" class="fixed bottom-5 right-5 p-3 bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-700 transition">
-            🌙
-        </button>
-        <ul id="mobile-menu" class="hidden bg-white text-center shadow-md md:hidden">
-            <li><a href="#hero" class="block py-2">Home</a></li>
-            <li><a href="#about" class="block py-2">About</a></li>
-            <li><a href="#services" class="block py-2">Services</a></li>
-            <li><a href="#testimonials" class="block py-2">Testimonials</a></li>
-            <li><a href="#contact" class="block py-2">Contact</a></li>
-        </ul>
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 to-indigo-500 text-white">
-        <h2 class="text-4xl font-bold mb-4 animate-fadeIn">Boost Your Business Online</h2>
-        <p class="text-lg mb-6 animate-fadeIn">We create high-quality, responsive websites.</p>
-        <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-lg shadow-md hover:bg-blue-100 transition">Get Started</a>
-        
-
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <div class="title">Websites Made Simple, Impactful, and Tailored for You!</div> <br>
+             <p>Creating a website doesn’t have to be stressful. I craft modern, user-friendly websites for businesses, freelancers, and creatives—so you can stay focused on your goals while we bring your vision to life.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Get a Free Consultation <i class="mdi mdi-creation" style="font-size: 20px;"></i> </a >
+                <a href="#" class="cta-link">Learn more →</a>
+            </div>
+        </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 text-center container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-6">About Us</h2>
-        <p class="text-gray-700 max-w-2xl mx-auto">We specialize in modern, user-friendly web design and development.</p>
+    <section id="about">
+        <div class="about-content">
+            <p>Running a business or building your brand is already a lot, let me handle the website for you. I create ready-made, fully customizable websites that match your goals, audience, and style. 
+                No hassle, no tech headaches just a stunning website that works while you focus on what matters most.</p> <br>
+            <p>Leave the heavy lifting to me! I’ll design a fully customized website that perfectly fits your needs and also your to budget, allowing you to focus on what really matters.</p>
+        </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-200 text-center">
-        <h2 class="text-3xl font-bold mb-6">Our Services</h2>
-        <div class="flex flex-wrap justify-center gap-6">
-            <div class="bg-white p-6 shadow-md rounded-lg w-80 transform hover:scale-105 transition">
-                <h3 class="text-xl font-semibold">Web Design</h3>
-                <p class="text-gray-600">Beautiful, functional, and fast websites.</p>
-            </div>
-            <div class="bg-white p-6 shadow-md rounded-lg w-80 transform hover:scale-105 transition">
-                <h3 class="text-xl font-semibold">SEO Optimization</h3>
-                <p class="text-gray-600">Rank higher on Google with our SEO strategies.</p>
-            </div>
+    <section id="services">
+        <h2>Let’s build something amazing together. <br> Here’s how I can help:</h2>
+        <div class="service-card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Custom Web Applications</h3>
+            <p>I help businesses create tailored web applications that solve specific challenges and improve operations.</p>
         </div>
+        <div class="service-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>SEO & Performance Optimization</h3>
+            <p>I’ll help your website perform better and rank higher on search engines, attracting more visitors.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-dolly-flatbed"></i>
+            <h3>E-Commerce Websites</h3>
+            <p>I specialize in creating secure, user-friendly e-commerce platforms that are easy to manage and provide a great shopping experience.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-laptop-medical"></i>
+            <h3>Website Maintenance & Support</h3>
+            <p>I’ll handle the maintenance of your website so you can focus on growing your business without worrying about technical issues.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>E-Learning Solutions</h3>
+            <p>I design and develop custom e-learning platforms to help businesses or educators deliver engaging online learning experiences.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-headset"></i>
+            <h3>Consulting & Strategy</h3>
+            <p>I offer professional consultation services to help businesses and individuals navigate their online and digital challenges.</p>
+        </div>
+      
     </section>
 
-    <!-- Add pricing table -->
-    <section id="pricing" class="py-20 text-center bg-gray-200">
-        <h2 class="text-3xl font-bold mb-6">Our Pricing</h2>
-        <div class="flex flex-wrap justify-center gap-6">
-            <div class="bg-white p-6 shadow-md rounded-lg w-80 transform hover:scale-105 transition">
-                <h3 class="text-xl font-semibold">Basic</h3>
-                <p class="text-gray-600">Perfect for small businesses</p>
-                <p class="text-2xl font-bold mt-3">$9.99/month</p>
-                <button class="mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Choose Plan</button>
-            </div>
-            <div class="bg-white p-6 shadow-md rounded-lg w-80 transform hover:scale-105 transition">
-                <h3 class="text-xl font-semibold">Pro</h3>
-                <p class="text-gray-600">For growing businesses</p>
-                <p class="text-2xl font-bold mt-3">$29.99/month</p>
-                <button class="mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Choose Plan</button>
-            </div>
-            <div class="bg-white p-6 shadow-md rounded-lg w-80 transform hover:scale-105 transition">
-                <h3 class="text-xl font-semibold">Enterprise</h3>
-                <p class="text-gray-600">For large-scale operations</p>
-                <p class="text-2xl font-bold mt-3">$99.99/month</p>
-                <button class="mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Choose Plan</button>
-            </div>
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <h2>Our Pricing</h2>
+        <div class="pricing-card">
+            <h3>Basic</h3>
+            <p>Perfect for small businesses</p>
+            <p class="price">$9.99/month</p>
+            <button>Choose Plan</button>
+        </div>
+        <div class="pricing-card">
+            <h3>Pro</h3>
+            <p>For growing businesses</p>
+            <p class="price">$29.99/month</p>
+            <button>Choose Plan</button>
+        </div>
+        <div class="pricing-card">
+            <h3>Enterprise</h3>
+            <p>For large-scale operations</p>
+            <p class="price">$99.99/month</p>
+            <button>Choose Plan</button>
         </div>
     </section>
-    
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 text-center container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-6">What Clients Say</h2>
-        <div class="relative max-w-xl mx-auto">
-            <div class="testimonial text-lg italic text-gray-800">"Amazing service! My business is growing thanks to this website." - John Doe</div>
-            <div class="testimonial text-lg italic text-gray-800 hidden">"Professional and creative team. Highly recommend!" - Sarah Smith</div>
-        </div>
+    <section id="testimonials">
+        <h2>What Clients Say</h2>
+        <div class="testimonial-1">"Amazing service! My business is growing thanks to this website." - John Doe</div>
+        <div class="testimonial-2">"Professional and creative team. Highly recommend!" - Sarah Smith</div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-200 text-center">
-        <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
-        <form id="contactForm" class="max-w-lg mx-auto bg-white p-6 shadow-md rounded-lg">
-            <input type="text" id="name" class="w-full p-3 mb-4 border rounded" placeholder="Your Name" required>
-            <input type="email" id="email" class="w-full p-3 mb-4 border rounded" placeholder="Your Email" required>
-            <textarea id="message" class="w-full p-3 mb-4 border rounded" placeholder="Your Message" required></textarea>
-            <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">Send Message</button>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
         </form>
     </section>
 
-    <footer class="py-4 bg-gray-900 text-white text-center">
+    <footer>
         <p>© 2025 ModernBiz. All rights reserved.</p>
     </footer>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+
+
+    
+<script>
+    var tabLinks = document.getElementsByClassName("tab-links");
+    var tabContents = document.getElementsByClassName("tab-contents");
+
+    function openTab(tabname){
+        for (tabLink of tabLinks) {
+            tabLink.classList.remove("active-link") 
+        }
+        for (tabContent of tabContents) {
+            tabContent.classList.remove("active-tab") 
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+
+</script>
+
+<script>
+var sidemenu = document.getElementById("desktop-menu");
+
+function openMenu() {
+    sidemenu.style.right = "0";
+}
+function closeMenu() {
+    sidemenu.style.right = "-200px";
+}
+</script>
+
+
 </body>
 </html>
